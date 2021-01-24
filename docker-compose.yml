@@ -14,4 +14,4 @@ services:
     environment:
       - ISC_DATA_DIRECTORY=/voldata/iconfig
     volumes:
-      - ./:/voldata
+      - ./voldata:/voldata
