@@ -1,15 +1,15 @@
-## intersystems-iris-docker-rest-template
-This is a template of a Multi-model REST API application built with ObjectScript in InterSystems IRIS.
+## iris-sftp-logs
+This was started from template of a Multi-model REST API application built with ObjectScript in InterSystems IRIS.
 It also has OPEN API spec, 
 can be developed with Docker and VSCode,
-can ve deployed as ZPM module.
+can be deployed as ZPM module.
 
 ## Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
 
 ## Installation with ZPM
 
-zpm:USER>install multi-model-api-template
+zpm:USER>install iris-sftp-logs
 
 ## Installation for development
 
@@ -18,7 +18,7 @@ Create your repository from template.
 Clone/git pull the repo into any local directory e.g. like it is shown below (here I show all the examples related to this repository, but I assume you have your own derived from the template):
 
 ```
-$ git clone git@github.com:intersystems-community/objectscript-rest-docker-template.git
+$ git clone git@github.com:oliverwilms/iris-sftp-logs.git
 ```
 
 Open the terminal in this directory and run:
@@ -87,7 +87,7 @@ Create a POST request e.g. in Postman with raw data in JSON. e.g.
 {"Name":"Elon Mask","Title":"CEO","Company":"Tesla","Phone":"123-123-1233","DOB":"1982-01-19"}
 ```
 
-Adjust the authorisation if needed - it is basic for container with default login and password for IRIR Community edition container
+Adjust the authorisation if needed - it is basic for container with default login and password for IRIS Community edition container
 
 and send the POST request to localhost:52773/crud/multi/object/
 
