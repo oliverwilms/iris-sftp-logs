@@ -13,9 +13,7 @@ zpm:USER>install iris-sftp-logs
 
 ## Installation for development
 
-Create your repository from template.
-
-Clone/git pull the repo into any local directory e.g. like it is shown below (here I show all the examples related to this repository, but I assume you have your own derived from the template):
+Clone/git pull the repo into any local directory like it is shown below:
 
 ```
 $ git clone git@github.com:oliverwilms/iris-sftp-logs.git
