@@ -17,7 +17,7 @@
         Url="/sftplog"
         PasswordAuthEnabled="1"
         UnauthenticatedEnabled="0"
-        SourcePath="/csp"
+        SourcePath="/voldata/icsp/sftplog"
         DeployPath="{$cspdir}/sftplog"
         ServeFiles="1"
         Recurse="1"
