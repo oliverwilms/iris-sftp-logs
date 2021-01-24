@@ -16,7 +16,7 @@ zpm:USER>install iris-sftp-logs
 Clone/git pull the repo into any local directory like it is shown below:
 
 ```
-$ git clone git@github.com:oliverwilms/iris-sftp-logs.git
+$ git clone https://github.com/oliverwilms/iris-sftp-logs.git
 ```
 
 Open the terminal in this directory and run:
