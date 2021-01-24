@@ -12,7 +12,7 @@ RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /opt/sftplog /ghostdb/
 RUN chmod 775 /voldata/icsp/sftplog/ /voldata/icsp/sftplog/sftplog.csp
 
 USER ${ISC_PACKAGE_MGRUSER}
-
+COPY Installer.cls .
 COPY src src
 COPY module.xml module.xml
 COPY iris.script /tmp/iris.script
