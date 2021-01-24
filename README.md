@@ -19,15 +19,14 @@ Clone/git pull the repo into any local directory like it is shown below:
 $ git clone https://github.com/oliverwilms/iris-sftp-logs.git
 ```
 
-Open the terminal in this directory and run:
-
+Open the terminal in this directory:
+```
+$ cd iris-sftp-logs
+```
+Run:
 ```
 $ docker-compose up -d --build
 ```
-
-or open the folder in VSCode and do the following:
-![rest](https://user-images.githubusercontent.com/2781759/78183327-63569800-7470-11ea-8561-c3b547ce9001.gif)
-
 
 ## How to Work With it
 
