@@ -28,7 +28,7 @@ Run:
 $ docker-compose up -d --build
 ```
 
-## How to Work With it
+## Deploy SFTP server
 
 If you want to deploy an SFTP server in a container, follow these steps:
 
@@ -38,7 +38,7 @@ $ cd sftp-server
 $ docker-compose up -d --build
 ```
 
-## What's insde the repo
+## What's inside the repo
 
 # Dockerfile
 
