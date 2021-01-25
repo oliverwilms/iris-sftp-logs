@@ -17,7 +17,7 @@
         Url="/sftplog"
         PasswordAuthEnabled="1"
         UnauthenticatedEnabled="0"
-        SourcePath="{$cspdir}/sftplog"
+        SourcePath="/csp"
         DeployPath="{$cspdir}/sftplog"
         ServeFiles="1"
         Recurse="1"
