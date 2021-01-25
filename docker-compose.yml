@@ -14,6 +14,5 @@ services:
     environment:
       - ISC_DATA_DIRECTORY=/voldata/iconfig
     volumes:
-    volumes:
       - ./:/irisrun/repo
       - ./voldata:/voldata
