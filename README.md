@@ -76,7 +76,19 @@ Setting data value directly into global bypasses data validation such as MAXLEN 
 
 ## object
 
-%Save performs validation
+When I update a Transfer with Bytes Read, Bytes Written, and Close Timestamp in LogTransferClose classmethod, I instantiate an object and use %Save method which performs validation:
+
+```
+Set objTransfer = ##class(Transfer).%OpenId(pTransferID,,.tSC)
+If $$$ISERR(tSC) {
+	Do ..DebugStatus(tSC)
+	Quit tSC
+}
+Set objTransfer.BytesRead = tBytesRead
+Set objTransfer.BytesWritten = tBytesWritten
+Set objTransfer.CloseTimestamp = pTimestamp
+Set tSC = objTransfer.%Save()
+```
 
 ## SQL
 
