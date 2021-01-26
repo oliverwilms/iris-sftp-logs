@@ -59,12 +59,16 @@ ClassMethod LogContainer(
 
 LogSessionOpen classmethod sets data into Session global:
 
+```
 Set ^Session(pContainerID,pTimestamp,tUserIP,tUsername) = pLogText
+```
 
 The Transfer global gets seeded in LogTransferOpen classmethod:
 
+```
 Set d = "^"
 Set ^Transfer(pSessionID,pTimestamp) = tFilename_d_tFlags_d_tMode
+```
 
 Setting data value directly into global bypasses data validation such as MAXLEN defined in class definition.
 
