@@ -38,16 +38,16 @@ $ cd sftp-server
 $ docker-compose up -d --build
 ```
 
-## What's inside the repo
+## How iris-sftp-logs uses IRIS multi-model data platform
 
-# Dockerfile
+# key-value globals
 
-The simplest dockerfile to start IRIS and load ObjectScript from /src/cls folder
-Use the related docker-compose.yml to easily setup additional parametes like port number and where you map keys and host folders.
+Set data value directly into global bypassing data validation.
 
-# .vscode/settings.json
+# object
 
-Settings file to let you immedietly code in VSCode with [VSCode ObjectScript plugin](https://marketplace.visualstudio.com/items?itemName=daimor.vscode-objectscript))
+%Save performs validation
 
-# .vscode/launch.json
-Config file if you want to debug with VSCode ObjectScript
+# SQL
+
+Run query
