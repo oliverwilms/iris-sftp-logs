@@ -93,3 +93,6 @@ Set tSC = objTransfer.%Save()
 ## SQL
 
 Run query
+
+iris-sftp-logs  [csp](https://github.com/oliverwilms/iris-sftp-logs/blob/master/csp/sftplog.csp) allows to look at sftp log file.
+<img width="1411" alt="Screenshot" src="https://raw.githubusercontent.com/oliverwilms/bilder/main/sftplog.PNG">
