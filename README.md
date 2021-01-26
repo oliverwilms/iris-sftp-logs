@@ -46,6 +46,7 @@ I defined classes for Container, Session, and Transfer objects with mapping to g
 
 When I encounter a new ContainerID in log file, I store the timestamp when it was first encountered in LogContainer classmethod:
 
+```
 ClassMethod LogContainer(
 	pContainerID As %String = "",
 	pTimestamp As %String = "") As %Status
@@ -56,6 +57,7 @@ ClassMethod LogContainer(
 	Set ^Container(pContainerID) = pTimestamp
 	Quit tSC
 }
+```
 
 LogSessionOpen classmethod sets data into Session global:
 
