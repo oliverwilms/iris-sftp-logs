@@ -21,7 +21,7 @@ If ($Data(%request.Data("iFilename",1))) {
 </td><td>
 <input type="text" id="iDirectory" name="iDirectory" size="150" value="#($Get(tDirectory))#"><br>
 </td></tr><tr><td>
-<label for="iFilename">SFTP Log File Directory:</label>
+<label for="iFilename">SFTP Log Filename:</label>
 </td><td>
 <input type="text" id="iFilename" name="iFilename" size="150" value="#($Get(tFilename))#"><br>
 </td></tr></table>
