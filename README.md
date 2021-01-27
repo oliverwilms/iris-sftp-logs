@@ -92,7 +92,10 @@ Set tSC = objTransfer.%Save()
 
 ## SQL
 
-Run query
+I created OutputTableData classmethod for Session class which gets called from sftplog.csp to display a table with Session data.
+
+```
+```
 
 iris-sftp-logs  [csp](https://github.com/oliverwilms/iris-sftp-logs/blob/master/csp/sftplog.csp) allows to look at sftp log file.
 <img width="1411" alt="Screenshot" src="https://raw.githubusercontent.com/oliverwilms/bilder/main/sftplog.PNG">
