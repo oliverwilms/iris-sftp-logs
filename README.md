@@ -95,6 +95,28 @@ Set tSC = objTransfer.%Save()
 I created OutputTableData classmethod for Session class which gets called from sftplog.csp to display a table with Session data.
 
 ```
+ClassMethod OutputTableData(
+	pWhere As %String = "",
+	pMaxRows = -1) As %Status
+{
+	Set tSC = $$$OK
+	Set tQuery = "SELECT * FROM SQLUser.Session"
+	Set tStatement = ##class(%SQL.Statement).%New()
+	Set tSC = tStatement.%Prepare(.tQuery)  // Create a cached query
+	If $$$ISERR(tSC) { Quit tSC }
+	#dim tResult As %SQL.StatementResult
+	Set tResult = tStatement.%Execute()
+	IF (tResult.%SQLCODE=0) { /*WRITE !,"Created a query",!*/ }
+	ELSEIF (tResult.%SQLCODE=-361) { /*WRITE !,"Query exists: ",tResult.%Message*/ }
+	ELSE { /*WRITE !,"CREATE QUERY error: ",tResult.%SQLCODE," ",tResult.%Message*/ QUIT tSC}
+ 	While tResult.%Next() {
+		Write !,"<tr><td>",tResult.ContainerID,"</td>"
+		Write !,"<td>",tResult.OpenTimestamp,"</td>"
+		Write !,"<td>",tResult.UserIP,"</td>"
+		Write !,"<td>",tResult.Username,"</td></tr>"
+	}
+	Quit tSC
+}
 ```
 
 iris-sftp-logs  [csp](https://github.com/oliverwilms/iris-sftp-logs/blob/master/csp/sftplog.csp) allows to look at sftp log file.
