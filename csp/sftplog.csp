@@ -8,12 +8,17 @@
 <script language="Cache" runat="Server">
 Set tDirectory = ""
 Set tFilename = ""
+Set tImport = ""
 If ($Data(%request.Data("iDirectory",1))) {
 	Set tDirectory = %request.Data("iDirectory",1)
 }
 If ($Data(%request.Data("iFilename",1))) {
 	Set tFilename = %request.Data("iFilename",1)
 }
+If ($Data(%request.Data("iImport",1))) {
+	Set tImport = %request.Data("iImport",1)
+}
+If tImport Set tSC = ##class(SFTPLog).ReadLog(tDirectory,tFilename)
 </script>
 <form>
 <table><tr><td>
@@ -24,9 +29,23 @@ If ($Data(%request.Data("iFilename",1))) {
 <label for="iFilename">SFTP Log Filename:</label>
 </td><td>
 <input type="text" id="iFilename" name="iFilename" size="150" value="#($Get(tFilename))#"><br>
+</td></tr><tr><td>
+<input type="checkbox" id="iImport" name="iImport" value="1">
+<label for="iImport">Import this log file</label><br>
 </td></tr></table>
 <input type="submit" value="Submit">
 </form>
+
+<table border=1><tr>
+<th>ContainerID</th>
+<th>Open Timestamp</th>
+<th>User IP</th>
+<th>Username</th>
+</tr>
+<script language="Cache" runat="Server">
+Set tSC = ##class(Session).OutputTableData()
+</script>
+</table>
 <script language="Cache" runat="Server">
 Write "<textarea id='debug' name='debug' rows='25' cols='155'>",!
 Set tRow = ""
