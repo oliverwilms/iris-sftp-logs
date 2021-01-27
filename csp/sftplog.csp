@@ -18,7 +18,7 @@ If ($Data(%request.Data("iFilename",1))) {
 If ($Data(%request.Data("iImport",1))) {
 	Set tImport = %request.Data("iImport",1)
 }
-If tImport Set tSC = ##class(SFTPLog).ReadLog(tDirectory,tFilename)
+If tImport Set tSC = ##class(User.SFTPLog).ReadLog(tDirectory,tFilename)
 </script>
 <form>
 <table><tr><td>
@@ -46,8 +46,9 @@ If tImport Set tSC = ##class(SFTPLog).ReadLog(tDirectory,tFilename)
 Set tSC = ##class(Session).OutputTableData()
 </script>
 </table>
+<br/>
 <script language="Cache" runat="Server">
-Write "<textarea id='debug' name='debug' rows='25' cols='155'>",!
+Write "<textarea id='debug' name='debug' rows='15' cols='150'>",!
 Set tRow = ""
 Set tFile = tDirectory_tFilename
 Set tSC = ##class(%File).DirectoryExists(tDirectory)
@@ -66,7 +67,7 @@ For {
 	If (tLen < 2) Quit
 	Write tLog,!
 	//Set tSC = ..OneLine(tLog,.tSessionID,.tTransferID)
-	If ($Increment(tRow) > 24) { Quit }
+	If ($Increment(tRow) > 14) { Quit }
 }
 Do tF.Close()
 Set tF = ""
