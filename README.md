@@ -40,7 +40,7 @@ $ docker-compose up -d --build
 
 # How iris-sftp-logs uses IRIS multi-model data platform
 
-I defined classes for Container, Session, and Transfer objects with mapping to globals. Class User.SFTPLog populates data into User.Container, User.Session, and User.Transfer classes.
+I defined classes for Container, Session, and Transfer objects with mapping to globals. Class User.SFTPLog populates data into User.Container, User.Session, and User.Transfer classes. It can be invoked from terminal or sftplog.csp (see below).
 
 ## key-value globals
 
