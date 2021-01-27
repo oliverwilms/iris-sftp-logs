@@ -11,6 +11,34 @@ Property UserIP As %String;
 
 Property Username As %String;
 
+ClassMethod OutputTableData(
+	pWhere As %String = "",
+	pMaxRows = -1) As %Status
+{
+	Set tSC = $$$OK
+	Set tQuery = "SELECT * FROM SQLUser.Session"
+	Set tStatement = ##class(%SQL.Statement).%New()
+	Set tSC = tStatement.%Prepare(.tQuery)  // Create a cached query
+	If $$$ISERR(tSC) { Quit tSC }
+	//Write "Default Select Mode = ",tStatement.%SelectMode,!  // 0=Logical, 1=ODBC, 2=Display
+	#dim tResult As %SQL.StatementResult
+	Set tResult = tStatement.%Execute()
+	IF (tResult.%SQLCODE=0) { /*WRITE !,"Created a query",!*/ }
+	ELSEIF (tResult.%SQLCODE=-361) { /*WRITE !,"Query exists: ",tResult.%Message*/ }
+	ELSE { /*WRITE !,"CREATE QUERY error: ",tResult.%SQLCODE," ",tResult.%Message*/ QUIT tSC}
+ 	While tResult.%Next() {
+		Set tContainerID = tResult.ContainerID
+		Set tOpenTimestamp = tResult.OpenTimestamp
+		Set tUserIP = tResult.UserIP
+		Set tUsername = tResult.Username
+		Write !,"<tr><td>",tContainerID,"</td>"
+		Write !,"<td>",tOpenTimestamp,"</td>"
+		Write !,"<td>",tUserIP,"</td>"
+		Write !,"<td>",tUsername,"</td></tr>"
+	}
+	Quit tSC
+}
+
 Storage NewStorage1
 {
 <Data name="Node1"/>
