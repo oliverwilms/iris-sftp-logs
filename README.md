@@ -119,5 +119,5 @@ ClassMethod OutputTableData(
 }
 ```
 
-iris-sftp-logs  [csp](https://github.com/oliverwilms/iris-sftp-logs/blob/master/csp/sftplog.csp) allows to look at sftp log file.
+iris-sftp-logs includes a [csp](https://github.com/oliverwilms/iris-sftp-logs/blob/master/csp/sftplog.csp) page which allows to import and look at sftp log files. You can access it at http://localhost:52773/sftplog/sftplog.csp. You need to replace localhost with the ip address if iris-sftp-logs runs on a remote server. Change the port number if you use a different port.
 <img width="1411" alt="Screenshot" src="https://raw.githubusercontent.com/oliverwilms/bilder/main/sftplog.PNG">
