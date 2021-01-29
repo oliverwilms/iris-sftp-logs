@@ -127,3 +127,6 @@ The repository includes a [sample sftp log file](https://github.com/oliverwilms/
 
 You will see contents of the log file displayed on the bottom of the screen.
 <img width="1411" alt="Screenshot" src="https://raw.githubusercontent.com/oliverwilms/bilder/main/sftplog_import_after.PNG">
+
+Once you have imported some sftp logs, you can choose a Session to focus on. Please click the Choose Session radio button and click Submit button.
+<img width="1411" alt="Screenshot" src="https://raw.githubusercontent.com/oliverwilms/bilder/main/sftplog_session0.PNG">
