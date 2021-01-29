@@ -130,3 +130,6 @@ You will see contents of the log file displayed on the bottom of the screen.
 
 Once you have imported some sftp logs, you can choose a Session to focus on. Please click the Choose Session radio button and click Submit button.
 <img width="1411" alt="Screenshot" src="https://raw.githubusercontent.com/oliverwilms/bilder/main/sftplog_session0.PNG">
+
+The log file raw contents get replaced by two tables. The first table shows Session data and the second table shows Transfer data.
+<img width="1411" alt="Screenshot" src="https://raw.githubusercontent.com/oliverwilms/bilder/main/sftplog_session_all.PNG">
