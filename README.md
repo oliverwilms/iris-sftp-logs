@@ -124,3 +124,6 @@ iris-sftp-logs includes a [csp](https://github.com/oliverwilms/iris-sftp-logs/bl
 
 The repository includes a [sample sftp log file](https://github.com/oliverwilms/iris-sftp-logs/blob/master/sftp.log). You can import it into IRIS database. Enter the directory (/irisrun/repo/) and filename (sftp.log), check the Import checkbox, and click Submit.
 <img width="1411" alt="Screenshot" src="https://raw.githubusercontent.com/oliverwilms/bilder/main/sftplog_import.PNG">
+
+You will see contents of the log file displayed on the bottom of the screen.
+<img width="1411" alt="Screenshot" src="https://raw.githubusercontent.com/oliverwilms/bilder/main/sftplog_import_after.PNG">
