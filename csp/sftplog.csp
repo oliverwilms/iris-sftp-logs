@@ -1,14 +1,31 @@
 <html>
 <head>
 <title>iris-sftp-logs</title>
+<script language=javaScript>
+function selectSession(pSessionID)
+{
+	self.document.location="sftplog.csp?iSessionID=" + pSessionID;
+}
+</script>
+
 </head>
 
 <body>
+<br/>
 <h1>iris-sftp-logs</h1>
 <script language="Cache" runat="Server">
 Set tDirectory = ""
 Set tFilename = ""
 Set tImport = ""
+Set tSelect = ""
+Set tSessionID = ""
+If ($Data(%request.Data("iSessionID",1))) {
+	Set tSelect = "Session"
+	Set tSessionID = %request.Data("iSessionID",1)
+}
+If ($Data(%request.Data("whichSelect",1))) {
+	Set tSelect = %request.Data("whichSelect",1)
+}
 If ($Data(%request.Data("iDirectory",1))) {
 	Set tDirectory = %request.Data("iDirectory",1)
 }
@@ -21,6 +38,13 @@ If ($Data(%request.Data("iImport",1))) {
 If tImport Set tSC = ##class(User.SFTPLog).ReadLog(tDirectory,tFilename)
 </script>
 <form>
+<table><tr><td>
+<input type="radio" id="selectLogfile" name="whichSelect" value="Logfile">
+<label for="selectLogfile">Choose Logfile</label><br>
+</td><td>
+<input type="radio" id="selectSession" name="whichSelect" value="Session">
+<label for="selectSession">Choose Session</label><br>
+</td></tr></table>
 <table><tr><td>
 <label for="iDirectory">SFTP Log File Directory:</label>
 </td><td>
@@ -36,6 +60,12 @@ If tImport Set tSC = ##class(User.SFTPLog).ReadLog(tDirectory,tFilename)
 <input type="submit" value="Submit">
 </form>
 
+<label for="hSelect">hidden Select:</label>
+<input type="text" id="hSelect" name="hSelect" size="10" value="#($Get(tSelect))#">
+<label for="hSessionID">hidden SessionID:</label>
+<input type="text" id="hSessionID" name="hSessionID" size="90" value="#($Get(tSessionID))#"><br>
+
+<csp:if condition='tSelect="Session"'>
 <table border=1><tr>
 <th>ContainerID</th>
 <th>Open Timestamp</th>
@@ -43,10 +73,24 @@ If tImport Set tSC = ##class(User.SFTPLog).ReadLog(tDirectory,tFilename)
 <th>Username</th>
 </tr>
 <script language="Cache" runat="Server">
-Set tSC = ##class(Session).OutputTableData()
+Set tSC = ##class(Session).OutputTableData(tSessionID,"selectSession('#');")
 </script>
 </table>
 <br/>
+
+<table border=1><tr>
+<th>Session</th>
+<th>Open Timestamp</th>
+<th>Filename</th>
+<th>Close Timestamp</th>
+</tr>
+<script language="Cache" runat="Server">
+Set tSC = ##class(Transfer).OutputTableData(tSessionID,"selectSession('#');")
+</script>
+</table>
+<br/>
+
+<csp:else>
 <script language="Cache" runat="Server">
 Write "<textarea id='debug' name='debug' rows='15' cols='150'>",!
 Set tRow = ""
@@ -66,7 +110,6 @@ For {
 	If '$$$ISOK(tSC) Quit
 	If (tLen < 2) Quit
 	Write tLog,!
-	//Set tSC = ..OneLine(tLog,.tSessionID,.tTransferID)
 	If ($Increment(tRow) > 14) { Quit }
 }
 Do tF.Close()
@@ -74,5 +117,6 @@ Set tF = ""
 Write "</textarea>","<br>",!
 //Write "<a href='/csp/sys/exp/UtilExpGlobalView.csp?$ID2=TESTunit&$NAMESPACE=",$Namespace,"'>View Debug Global"
 </script>
+</csp:if>
 </body>
 </html>
