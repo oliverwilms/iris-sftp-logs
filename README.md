@@ -122,5 +122,5 @@ ClassMethod OutputTableData(
 iris-sftp-logs includes a [csp](https://github.com/oliverwilms/iris-sftp-logs/blob/master/csp/sftplog.csp) page to manage your sftp log files. You can access it at http://localhost:52773/sftplog/sftplog.csp. You need to replace localhost with the ip address if iris-sftp-logs runs on a remote server. Change the port number if you use a different port.
 <img width="1411" alt="Screenshot" src="https://raw.githubusercontent.com/oliverwilms/bilder/main/sftplog.PNG">
 
-The repository includes a [sample sftp log file](https://github.com/oliverwilms/iris-sftp-logs/blob/master/sftp.log).You can import it into IRIS database. Enter the directory and filename, check the Import checkbox, and click Submit.
+The repository includes a [sample sftp log file](https://github.com/oliverwilms/iris-sftp-logs/blob/master/sftp.log). You can import it into IRIS database. Enter the directory (/irisrun/repo/) and filename (sftp.log), check the Import checkbox, and click Submit.
 <img width="1411" alt="Screenshot" src="https://raw.githubusercontent.com/oliverwilms/bilder/main/sftplog_import.PNG">
