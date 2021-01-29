@@ -133,3 +133,7 @@ Once you have imported some sftp logs, you can choose a Session to focus on. Ple
 
 The log file raw contents get replaced by two tables. The first table shows Session data and the second table shows Transfer data.
 <img width="1411" alt="Screenshot" src="https://raw.githubusercontent.com/oliverwilms/bilder/main/sftplog_session_all.PNG">
+
+If you click on a row in the Session table, the page displays Session and Transfer data for the selected Session only.
+
+If you want to choose a different Session, please click the Choose Session radio button and click Submit button again.
