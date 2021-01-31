@@ -73,19 +73,22 @@ If tImport Set tSC = ##class(User.SFTPLog).ReadLog(tDirectory,tFilename)
 <th>Username</th>
 </tr>
 <script language="Cache" runat="Server">
-Set tSC = ##class(Session).OutputTableData(tSessionID,"selectSession('#');")
+Set tSC = ##class(Helper).SessionTableData(tSessionID,"selectSession('#');")
 </script>
 </table>
 <br/>
 
 <table border=1><tr>
-<th>Session</th>
 <th>Open Timestamp</th>
 <th>Filename</th>
+<th>Flags</th>
+<th>Mode</th>
+<th>Bytes Read</th>
+<th>Bytes Written</th>
 <th>Close Timestamp</th>
 </tr>
 <script language="Cache" runat="Server">
-Set tSC = ##class(Transfer).OutputTableData(tSessionID,"selectSession('#');")
+Set tSC = ##class(Helper).TransferTableData(tSessionID,"selectTransfer('#');")
 </script>
 </table>
 <br/>
