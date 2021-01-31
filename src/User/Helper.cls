@@ -178,7 +178,7 @@ ClassMethod TransferTableData(
 		Write !,"<td>",tResult.Mode,"</td>"
 		Write !,"<td>",tResult.BytesRead,"</td>"
 		Write !,"<td>",tResult.BytesWritten,"</td>"
-		Write !,"<td>",tResult.CloseTimestamp,"</td></tr>"
+		Write !,"<td>",pResponseData.CloseTimestamp,"</td></tr>"
 	}
 	Quit tSC
 }
