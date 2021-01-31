@@ -3,7 +3,7 @@
   <Document name="iris-sftp-logs.ZPM">
     <Module>
       <Name>iris-sftp-logs</Name>
-      <Version>1.0.3</Version>
+      <Version>1.0.4</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
       <Resource Name="User.PKG"/>
