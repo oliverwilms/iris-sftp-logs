@@ -1,8 +1,17 @@
 ## iris-sftp-logs
-This was started from template of a Multi-model REST API application built with ObjectScript in InterSystems IRIS.
-It also has OPEN API spec, 
-can be developed with Docker and VSCode,
-can be deployed as ZPM module.
+This was started from template of a Multi-model REST API application built with ObjectScript in InterSystems IRIS. iris-sftp-logs API accepts log file lines at this URL:
+POST localhost:52773/restapi/{log file line}
+
+You need to replace localhost with the ip address if iris-sftp-logs runs on a remote server. Change the port number if you use a different port.
+
+Within sftplog.csp (via User.Helper classmethod TransferTableData) I utilize REST call (GET) to /restapi/transfer/tr/{TransferID} to obtain display friendly time stamps for output in Transfer table.
+
+```
+Set pIris = 0
+Set pType = "GET"
+Set pUrl = "/restapi/transfer/tr/"_tResult.ID
+Set tSC = ..CallRESTapi(pIris,pUrl,.pResponseData,pType)
+```
 
 ## Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
